@@ -14,6 +14,7 @@
 		718D59821D62437200A8868E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718D59811D62437200A8868E /* Assets.xcassets */; };
 		718D59851D62437200A8868E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718D59831D62437200A8868E /* LaunchScreen.storyboard */; };
 		71B4EDB31DFA2A10000DF545 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 71B4EDB21DFA2A10000DF545 /* README.md */; };
+		71B4EDB51DFA5258000DF545 /* Programming Project 1_ Calculator.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 71B4EDB41DFA5258000DF545 /* Programming Project 1_ Calculator.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		718D59841D62437200A8868E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		718D59861D62437200A8868E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71B4EDB21DFA2A10000DF545 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		71B4EDB41DFA5258000DF545 /* Programming Project 1_ Calculator.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Programming Project 1_ Calculator.pdf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				718D597C1D62437200A8868E /* ViewController.swift */,
 				718D597E1D62437200A8868E /* Main.storyboard */,
 				713758561D74D6A0002F9973 /* CalculatorBrain.swift */,
+				71B4EDB41DFA5258000DF545 /* Programming Project 1_ Calculator.pdf */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				718D59851D62437200A8868E /* LaunchScreen.storyboard in Resources */,
+				71B4EDB51DFA5258000DF545 /* Programming Project 1_ Calculator.pdf in Resources */,
 				718D59821D62437200A8868E /* Assets.xcassets in Resources */,
 				718D59801D62437200A8868E /* Main.storyboard in Resources */,
 			);

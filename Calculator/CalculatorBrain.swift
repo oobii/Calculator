@@ -35,7 +35,8 @@ class CalculatorBrain {
         "÷": Operation.BinaryOperation({ return $0 / $1 }),
         "+": Operation.BinaryOperation({ return $0 + $1}),
         "−": Operation.BinaryOperation({ return $0 - $1 }),
-          "=": Operation.Equals,
+        "=": Operation.Equals,
+        
     ]
   
     // check the name for the enums () !!!!!
