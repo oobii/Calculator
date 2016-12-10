@@ -15,13 +15,30 @@ class ViewController: UIViewController {
     @IBOutlet private weak var display: UILabel!
     
     private var userIsInTheMiddleOfTyping = false
+    private var userPressedFloationPoint = false
     
     @IBAction private func touchDigit(sender: UIButton) {
         let digit = sender.currentTitle!
         if userIsInTheMiddleOfTyping {
-            let textCurrentlyInDisplay = display.text!
-            display!.text = textCurrentlyInDisplay + digit
+            
+            if digit != "." {
+                let textCurrentlyInDisplay = display.text!
+                display!.text = textCurrentlyInDisplay + digit
+            }
+            else {
+                
+                if !userPressedFloationPoint {
+                    let textCurrentlyInDisplay = display.text!
+                    display!.text = textCurrentlyInDisplay + digit
+                }
+                userPressedFloationPoint = true
+            }
         } else {
+            
+            if digit == "." {
+                userPressedFloationPoint = true
+                
+            }
             display.text = digit
         }
         userIsInTheMiddleOfTyping = true
@@ -41,19 +58,21 @@ class ViewController: UIViewController {
     
     @IBAction private func performOperation(sender: UIButton) {
         
+        userPressedFloationPoint = false
+        
         if userIsInTheMiddleOfTyping {
             
             brain.setOperand(displayValue)
             userIsInTheMiddleOfTyping = false
         }
-    
+        
         if let mathematicalSymbol = sender.currentTitle {
             brain.performeOperation(mathematicalSymbol)
             
-            }
+        }
         displayValue = brain.result
         
-    
+        
     }
     
 }

@@ -26,7 +26,7 @@
 		718D59811D62437200A8868E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		718D59841D62437200A8868E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		718D59861D62437200A8868E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71B4EDB21DFA2A10000DF545 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		71B4EDB21DFA2A10000DF545 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71B4EDB41DFA5258000DF545 /* Programming Project 1_ Calculator.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Programming Project 1_ Calculator.pdf"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -44,7 +44,6 @@
 		718D596E1D62437200A8868E = {
 			isa = PBXGroup;
 			children = (
-				71B4EDB21DFA2A10000DF545 /* README.md */,
 				718D59791D62437200A8868E /* Calculator */,
 				718D59781D62437200A8868E /* Products */,
 			);
@@ -66,6 +65,7 @@
 				718D597E1D62437200A8868E /* Main.storyboard */,
 				713758561D74D6A0002F9973 /* CalculatorBrain.swift */,
 				71B4EDB41DFA5258000DF545 /* Programming Project 1_ Calculator.pdf */,
+				71B4EDB21DFA2A10000DF545 /* README.md */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
