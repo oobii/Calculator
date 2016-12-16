@@ -2,7 +2,7 @@
 //  CalculatorBrain.swift
 //  Calculator
 //
-//  Created by martynov on 2016-08-29.
+//  Created by oobii on 2016-08-29.
 //  Copyright © 2016 martynov. All rights reserved.
 //
 
@@ -27,10 +27,14 @@ func sqrt3(op: Double) -> Double {
 class CalculatorBrain {
     
     private var accumulator = 0.0
-    private var description = ""
+    var description = ""
+    private var isPartialResult = false
+    private var isEquals = false
     
     func setOperand( operand: Double) {
         accumulator = operand
+        
+        description = description + " " + String(accumulator)
         
     }
     
@@ -64,7 +68,7 @@ class CalculatorBrain {
         case Reset
     }
     
-    // we want tha tto be nil if we did not set it
+    // we want that to be nil if we did not set it
     private var pending: PendingBinaryOperationInfo?
     
     // Salting away function and the first operand
@@ -76,15 +80,30 @@ class CalculatorBrain {
     func performeOperation(symbol:String) {
         if let constant = operations[symbol] {
             switch constant {
+                
             case .Constant(let value): accumulator = value
+                
             case .BinaryOperation(let function):
                 ExecutePendingBinaryOperation()
                 pending = PendingBinaryOperationInfo(binaryFunction: function, firstOperand: accumulator )
+                isPartialResult = true
+                
             case .UnaryOperation(let function): accumulator = function(accumulator)
+                
             case .Equals: ExecutePendingBinaryOperation()
+            isPartialResult = false
+            isEquals = true
+                
             case .Reset: ExecuteReset()
                 
                 
+            }
+            if symbol != "AC" {
+                
+                description = description + " " + symbol
+                
+            } else {
+                descriptionValue = " "
             }
         }
     }
@@ -99,6 +118,8 @@ class CalculatorBrain {
     private func ExecuteReset() {
         accumulator = 0.0
         pending = nil
+        isPartialResult = false
+        descriptionValue = " "
         
     }
     
@@ -106,6 +127,20 @@ class CalculatorBrain {
     var result: Double {
         get {
             return accumulator
+        }
+    }
+    
+    var descriptionValue: String {
+        set {
+            description = " "
+        }
+        get {
+            if isPartialResult {
+                return description + "..."
+            } else {
+                
+                return description
+            }
         }
     }
 }

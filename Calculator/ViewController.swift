@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Calculator
 //
-//  Created by martynov on 2016-08-15.
+//  Created by oobii on 2016-08-15.
 //  Copyright © 2016 martynov. All rights reserved.
 //
 
@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    @IBOutlet weak var history: UILabel!
     
     @IBOutlet private weak var display: UILabel!
     
@@ -71,7 +72,7 @@ class ViewController: UIViewController {
             
         }
         displayValue = brain.result
-        
+        history.text  = brain.descriptionValue
         
     }
     

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Calculator
 //
-//  Created by martynov on 2016-08-15.
+//  Created by oobii on 2016-08-15.
 //  Copyright © 2016 martynov. All rights reserved.
 //
 
