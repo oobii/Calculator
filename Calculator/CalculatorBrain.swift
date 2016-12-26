@@ -31,8 +31,12 @@ class CalculatorBrain {
     private var isPartialResult = false
     private var isEquals = false
     
+    // Storing aout internal program as array of Double and Strings
+    private var internalProgram = [AnyObject]()
+    
     func setOperand( operand: Double) {
         accumulator = operand
+        internalProgram.append(operand)
         
         description = description + " " + String(accumulator)
         
@@ -50,6 +54,7 @@ class CalculatorBrain {
         "sin": Operation.UnaryOperation(sin),
         "ln" : Operation.UnaryOperation(log),
         "1/x": Operation.UnaryOperation(oneByX),
+        //add unary minus/plus
         "×": Operation.BinaryOperation({ return $0 * $1 }),
         "÷": Operation.BinaryOperation({ return $0 / $1 }),
         "+": Operation.BinaryOperation({ return $0 + $1}),
@@ -78,6 +83,7 @@ class CalculatorBrain {
     }
     
     func performeOperation(symbol:String) {
+        internalProgram.append(symbol)
         if let constant = operations[symbol] {
             switch constant {
                 
@@ -123,6 +129,34 @@ class CalculatorBrain {
         
     }
     
+    typealias  PropertyList = AnyObject
+    var program: PropertyList {
+        
+        get {
+            return internalProgram
+        }
+        
+        set {
+            //clear()
+            if let arrayOfOps = newValue as? [AnyObject] {
+                for op in arrayOfOps {
+                    if let operand = op as? Double {
+                        setOperand(operand)
+                    } else if let operation = op as? String {
+                        performeOperation(operation)
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+    func clear() {
+        accumulator = 0.0
+        pending = nil
+        internalProgram.removeAll()
+    }
     
     var result: Double {
         get {
